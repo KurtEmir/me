@@ -1,0 +1,210 @@
+# Kişisel Web Sitesi - Gereksinimler
+# Tema: Siyah (#0a0a0a) + Mavi (#3b82f6) renk paleti
+# GitHub: https://github.com/KurtEmir
+
+# ─────────────────────────────────────────
+# 1. KİŞİSEL BİLGİLER  ← Senden gelmesi gerekenler
+# ─────────────────────────────────────────
+
+Ad Soyad:     Emir Kurt
+Unvan:        Jr. Software Developer | Full Stack Developer | Computer Engineer
+Lokasyon:     ? (şehir, ülke — belirtmedin)
+E-posta:      ? (eklemek istersen)
+GitHub:       https://github.com/KurtEmir
+LinkedIn:     ? (profil linki)
+Kısa bio:     ? (2-3 cümle, "ben kimim" sorusuna cevap — kendin yaz)
+CV:           ? (PDF olarak eklemek istersen)
+Fotoğraf:     ? (isteğe bağlı)
+
+# Eksik bilgilerin işaretlendiği alanlar → bunları versen requirements tamam olur.
+
+# ─────────────────────────────────────────
+# 2. GITHUB İSTATİSTİKLERİ  ← Otomatik çekilecek
+# ─────────────────────────────────────────
+
+# Aşağıdaki veriler GitHub API üzerinden canlı olarak çekilir:
+# (kullanıcı adı: KurtEmir)
+
+Takipçi:         4
+Takip Edilen:    16
+Toplam Repo:     16
+GitHub Başarımları:
+  - Pull Shark ×2
+  - Quickdraw
+
+# ─────────────────────────────────────────
+# 3. PROJELER  ← GitHub'dan bulundu, açıklamalar eksik
+# ─────────────────────────────────────────
+
+# Öne çıkarılacak projeler (önerilen 4-6 adet):
+
+[1] GraduationP (Mezuniyet Projesi) ★ EN GÜÇLÜ
+    Açıklama: Uzaktan sağlık izleme sistemi — hasta vital verilerini gerçek zamanlı
+              takip eden, doktor-hasta iletişimi sağlayan full-stack platform.
+    Teknolojiler: React 18, TypeScript, Tailwind CSS, FastAPI, SQLAlchemy, JWT, Chart.js
+    Link: https://github.com/KurtEmir/GraduationP
+    Demo: ? (canlı demo var mı?)
+
+[2] Flip-Learn_Project
+    Açıklama: Türkçe-İngilizce kelime öğrenme mobil uygulaması. DeepL API entegrasyonlu
+              dijital flashcard sistemi.
+    Teknolojiler: React Native, JavaScript, Expo, DeepL Translate API
+    Link: https://github.com/KurtEmir/Flip-Learn_Project
+    Demo: ? (Expo Go ile test edilebilir mi?)
+
+[3] MenuPortalApi
+    Açıklama: ASP.NET tabanlı menü yönetim API'si. Kimlik doğrulama ve yetkilendirme
+              sistemi dahil, Docker ile konteynerize edilmiş.
+    Teknolojiler: C#, ASP.NET, Entity Framework, Identity Framework, Docker
+    Link: https://github.com/KurtEmir/MenuPortalApi
+    Demo: yok (API projesi)
+
+[4] StudentX
+    Açıklama: Öğrenci yönetim portali. C# .NET backend, web tabanlı frontend.
+    Teknolojiler: C#, .NET, HTML, CSS, JavaScript
+    Link: https://github.com/KurtEmir/StudentX
+    Demo: ?
+
+[5] worldcup
+    Açıklama: Dünya Kupası temalı web uygulaması.
+    Teknolojiler: React, TypeScript, Vite
+    Link: https://github.com/KurtEmir/worldcup
+    Demo: https://worldcup-ochre-nine.vercel.app
+
+[6] NetflixBackendDemo
+    Açıklama: Netflix benzeri akış platformu backend demosu.
+    Teknolojiler: C#, ASP.NET
+    Link: https://github.com/KurtEmir/NetflixBackendDemo
+    Demo: yok
+
+# Diğer repolar (sitede göstermek istersen):
+# - DrawingGameWithPythonTurtle (Python)
+# - QRCodeGenerator (Python)
+# - PdfConverter (Python)
+# - RemoveImageBackground (Python)
+# - drag-drop-editor (JavaScript)
+# - isil_hoca_web_sitesi (JavaScript)
+
+# ─────────────────────────────────────────
+# 4. BECERİLER  ← GitHub'dan tespit edildi
+# ─────────────────────────────────────────
+
+Programlama Dilleri:
+  - C# (güçlü)
+  - TypeScript
+  - JavaScript
+  - Python
+  - Java
+  - HTML5 / CSS
+
+Framework & Kütüphaneler:
+  - ASP.NET / .NET
+  - React / React Native
+  - FastAPI
+  - Entity Framework
+  - Expo
+  - Tailwind CSS
+  - Chart.js
+  - Radix UI
+  - jQuery
+
+Veritabanı:
+  - Microsoft SQL Server
+  - MySQL
+  - SQLite
+
+Araçlar & Platformlar:
+  - Docker
+  - Git / GitHub
+  - Vercel
+  - JWT
+
+# ─────────────────────────────────────────
+# 5. DENEYİM  ← Senden gelmesi gerekiyor
+# ─────────────────────────────────────────
+
+# GitHub profilinde iş deneyimi bilgisi yok.
+# Aşağıdakileri paylaşırsan sitenin deneyim bölümünü doldurabiliriz:
+
+- Çalıştığın şirket(ler) var mı? (staj dahil)
+- Şirket adı, pozisyon, tarih aralığı, kısa açıklama
+
+# ─────────────────────────────────────────
+# 6. EĞİTİM  ← Senden gelmesi gerekiyor
+# ─────────────────────────────────────────
+
+# "Computer Engineer" yazdığına göre mühendislik öğrencisi/mezunusun.
+# Eksik bilgiler:
+
+- Okul adı: ?
+- Bölüm: Bilgisayar Mühendisliği (doğru mu?)
+- Başlangıç - mezuniyet yılı: ?
+- GPA (isteğe bağlı): ?
+
+# ─────────────────────────────────────────
+# 7. TEKNOLOJİ STACKİ (Web Sitesi İçin)
+# ─────────────────────────────────────────
+
+Framework:    Next.js 14 (App Router)
+Dil:          TypeScript
+Stil:         Tailwind CSS + tailwind-merge
+Animasyon:    Framer Motion
+İkonlar:      Lucide React
+GitHub API:   Octokit REST (repo & istatistik çekmek için)
+Deployment:   Vercel (ücretsiz)
+
+# package.json bağımlılıkları:
+next@14
+react@18
+react-dom@18
+typescript
+tailwindcss
+framer-motion
+lucide-react
+tailwind-merge
+@octokit/rest          # GitHub istatistikleri için
+@types/node
+@types/react
+@types/react-dom
+autoprefixer
+postcss
+
+# ─────────────────────────────────────────
+# 8. RENK & TASARIM SİSTEMİ
+# ─────────────────────────────────────────
+
+--bg-primary:    #0a0a0a   # Ana arka plan (derin siyah)
+--bg-secondary:  #111111   # Kart / panel arka planı
+--bg-border:     #1e2a3a   # Kenarlıklar (mavimsi ton)
+--accent-blue:   #3b82f6   # Ana vurgu (Tailwind blue-500)
+--accent-glow:   #1d4ed8   # Hover / glow efekti (blue-700)
+--text-primary:  #f0f6ff   # Ana metin (hafif mavimsi beyaz)
+--text-muted:    #6b7280   # İkincil metin
+
+Font (başlık): Geist Mono veya JetBrains Mono  # terminal hissi
+Font (gövde):  Inter
+
+# ─────────────────────────────────────────
+# 9. SAYFA YAPISI
+# ─────────────────────────────────────────
+
+/ (tek sayfa, scroll ile gezilebilir)
+  ├── Hero       → İsim, unvan (typing animasyonu), bio, sosyal linkler
+  ├── Hakkımda   → Bio + GitHub istatistikleri (follower, repo, başarım)
+  ├── Beceriler  → İkon + badge grid
+  ├── Projeler   → Kart grid (6 proje)
+  ├── Deneyim    → Timeline
+  └── İletişim   → Mail + sosyal linkler
+
+# ─────────────────────────────────────────
+# 10. EKSİK OLAN BİLGİLER (Özet)
+# ─────────────────────────────────────────
+
+[ ] Şehir / ülke
+[ ] E-posta adresi
+[ ] LinkedIn URL
+[ ] Kısa biyografi (kendi cümlelerinle)
+[ ] İş / staj deneyimi (varsa)
+[ ] Okul adı ve mezuniyet yılı
+[ ] CV PDF dosyası (isteğe bağlı)
+[ ] Profil fotoğrafı (isteğe bağlı)

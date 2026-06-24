@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --accent-blue: #3b82f6;
+  --text-primary: #f0f6ff;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f0f6ff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.glow-blue {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
+  transform: translateY(-2px);
+}
+
+.section-enter {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.section-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Blog içerik stili ── */
+.prose-blog {
+  color: #c9d8ef;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.prose-blog h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0f6ff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #1e2a3a;
+}
+.prose-blog h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0f6ff;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+.prose-blog p {
+  margin-bottom: 1.2rem;
+}
+.prose-blog a {
+  color: #3b82f6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-blog ul, .prose-blog ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.prose-blog li {
+  margin-bottom: 0.4rem;
+}
+.prose-blog strong {
+  color: #f0f6ff;
+  font-weight: 600;
+}
+.prose-blog code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
+  background: #0f1520;
+  color: #93c5fd;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  border: 1px solid #1e2a3a;
+}
+.prose-blog pre {
+  background: #0a0f1a;
+  border: 1px solid #1e2a3a;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+.prose-blog pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.83em;
+  color: #c9d8ef;
+  line-height: 1.7;
+}
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
+}
+.prose-blog th {
+  font-family: 'JetBrains Mono', monospace;
+  background: #0f1520;
+  color: #3b82f6;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #1e2a3a;
+}
+.prose-blog td {
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid #1e2a3a;
+  color: #a0b4cc;
+}
+.prose-blog blockquote {
+  border-left: 3px solid #3b82f6;
+  margin: 1.5rem 0;
+  padding: 0.5rem 1.25rem;
+  color: #6b7280;
+  font-style: italic;
+}

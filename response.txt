@@ -1,0 +1,67 @@
+# Kişisel Bilgiler
+- Emir Kurt
+- Merhabalar. Uzun süredir web alanında yazılım geliştiriyorum. Özellikle .NET Core ve C# ile back-end geliştirme konusunda, tecrübe ve altyapıya sahibim. Aynı zamanda veritabanı yönetimi, SQL optimizasyonları ve API geliştirme üzerine çalışmalarım oldu. Front-end tarafında da ihtiyaç oldukça çalışmalar yaptım ve kullanıcı deneyimini önemseyen yapılar oluşturmaya özen gösterdim.
+- Lokasyon (İstanbul, Türkiye)
+- emirkurt_2001@outlook.com
+- https://github.com/KurtEmir
+- https://www.linkedin.com/in/kurtemir/
+
+
+# Deneyim (Her iş için)
+TeacherX - Full Stack Software Developer
+Mayıs 2024 - Devam Ediyor
+Eğitim kurumlarının kullanımına yönelik yönetim panelleri (admin panels) ve kullanıcı dostu arayüzleri
+geliştirdim.
+SQL View'ları ve karmaşık sorgular ile veritabanı operasyonlarının yürütülmesi.
+TeacherX ve CertifiX projelerinde ASP.NET Core teknolojisi kullanarak Full-Stack Yazılım Geliştirici
+olarak görev aldım.
+geliştirilmesi
+Kurumsal üyelerin, verilere göre dinamik olarak şekillenen raporları indirebilmesini sağlayan sistemlerin
+Vimeo entegrasyonu ile TeacherX ve CertifiX platformları üzerinde canlı yayın altyapısının kurulması.
+Kullanıcı loglarından Google Chart ve benzeri kütüphanelerle grafikler oluşturulması; bu verilerin
+kuruma özel detaylı raporlara dönüştürülerek PDF/DOCX formatında indirilmesine olanak sağlanması.
+ExcelParser gibi kütüphaneler kullanarak toplu veri işlemleri (Bulk CRUD) için metotların geliştirilmesi
+Daha güvenilir ve izlenebilir bir kod yapısı için Logger, Health Check ve OpenTelemetry
+konfigürasyonlarının yapılması.
+CertifiX platformu için kullanıcıların kendi sertifikalarını tasarlayabilecekleri sürükle-bırak (Drag & Drop)
+tabanlı bir tasarım sisteminin kodlanması.
+.NET projelerinin IIS Manager üzerinden Windows Server ortamına kurulumu ve yayına alınması
+(Deployment)
+ETZ etkinliği için yönetim panelinden her yıl yenilenebilir, sıfırdan tasarlanmış bir CMS projesinin
+geliştirilmesi.
+K12 ve Magistum gibi kurumların sisteme entegrasyonunun sağlanması
+B2 Ajans - Organizasyon Görevlisi
+Şubat 2023- Kasım 2023
+Konser ve yeme içme gibi çeşitli etkinliklerde karşılama yönlendirme, stant görevlisi ve organizasyon
+görevlisi gibi farklı rollerde görev aldım. Beklenmedik aksaklıklarda hızlı aksiyon alarak plan dahilinde ki
+akışın bozulmasını önledim. Farklı profillerdeki katılımcılara karşı güler yüzlü ve çözüm odaklı bir iletişim
+dili geliştirdim.
+Spor İstanbul A.Ş. – Organizasyon Görevlisi
+Haziran 2022 - Kasım 2022
+İBB bünyesinde gerçekleştirilen uluslararası ve yerel spor organizasyonlarında (İtfaiye Olimpiyatları,
+Maratonlar vb.) operasyonel destek personeli olarak görev aldım. Kayıt, akreditasyon ve saha
+yönlendirme süreçlerinde aktif sorumluluk üstlenerek; büyük ölçekli etkinliklerin planlama ve uygulama
+aşamalarında koordinasyon yeteneğimi pekiştirdim
+
+Staj Deneyimi Dil
+Aron Technology - Intern
+Nisan 2024- Mayıs 2024
+PHP kullanarak, kurumların iş ilanı yayınlayabildiği ve kullanıcıların form aracılığıyla başvuru
+yapabildiği dinamik bir portal geliştirdim.
+HTML, CSS ve JavaScript kullanarak kullanıcı dostu ön yüz (frontend) arayüzleri tasarladım.
+PHP kullanarak, kurumların iş ilanı yayınlayabildiği ve kullanıcıların form aracılığıyla başvuru
+yapabildiği dinamik bir portal geliştirdim.
+ETZ fu arında Aron Technologyʼnin ürünlerinin tanıtımını yapıp firmanın portföyünü genişlettim.
+
+# BECERİLER 
+Word,Excel,PowerPoint
+SQL
+ASP.NET Core
+WEB API
+HTML / CSS / JS
+DOCKER
+React JS
+
+
+# Eğitim (isteğe bağlı)
+- İstanbul Aydın Üniversitesi Bilgisayar Mühendisliği ekim 2025
