@@ -6,9 +6,9 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          primary: '#0a0a0a',
-          secondary: '#111111',
-          card: '#0f1520',
+          primary: '#141414',
+          secondary: '#1a1a1a',
+          card: '#111827',
         },
         blue: {
           accent: '#3b82f6',
