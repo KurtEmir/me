@@ -6,16 +6,17 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const HOME_LINKS = [
-  { label: 'Hakkımda', href: '#about' },
-  { label: 'Beceriler', href: '#skills' },
-  { label: 'Projeler', href: '#projects' },
-  { label: 'Deneyim', href: '#experience' },
-  { label: 'İletişim', href: '#contact' },
+  { label: 'Hakkımda', href: '#about', id: 'about' },
+  { label: 'Beceriler', href: '#skills', id: 'skills' },
+  { label: 'Projeler', href: '#projects', id: 'projects' },
+  { label: 'Deneyim', href: '#experience', id: 'experience' },
+  { label: 'İletişim', href: '#contact', id: 'contact' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const pathname = usePathname()
   const isHome = pathname === '/'
 
@@ -24,6 +25,33 @@ export default function Navbar() {
     window.addEventListener('scroll', handler)
     return () => window.removeEventListener('scroll', handler)
   }, [])
+
+  useEffect(() => {
+    if (!isHome) return
+
+    const observers: IntersectionObserver[] = []
+
+    HOME_LINKS.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (!el) return
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id)
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      )
+      observer.observe(el)
+      observers.push(observer)
+    })
+
+    return () => observers.forEach((o) => o.disconnect())
+  }, [isHome])
+
+  const linkClass = (id: string) =>
+    `font-mono text-sm transition-colors ${
+      activeSection === id ? 'text-blue-accent' : 'text-text-muted hover:text-blue-accent'
+    }`
 
   return (
     <nav
@@ -34,10 +62,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-mono text-blue-accent font-bold text-lg tracking-tight"
-        >
+        <Link href="/" className="font-mono text-blue-accent font-bold text-lg tracking-tight">
           ek<span className="text-text-muted">.</span>dev
         </Link>
 
@@ -45,20 +70,12 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-7">
           {isHome
             ? HOME_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-mono text-sm text-text-muted hover:text-blue-accent transition-colors"
-                >
+                <a key={link.id} href={link.href} className={linkClass(link.id)}>
                   {link.label}
                 </a>
               ))
             : HOME_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={`/${link.href}`}
-                  className="font-mono text-sm text-text-muted hover:text-blue-accent transition-colors"
-                >
+                <Link key={link.id} href={`/${link.href}`} className="font-mono text-sm text-text-muted hover:text-blue-accent transition-colors">
                   {link.label}
                 </Link>
               ))}
@@ -99,9 +116,9 @@ export default function Navbar() {
           {isHome
             ? HOME_LINKS.map((link) => (
                 <a
-                  key={link.href}
+                  key={link.id}
                   href={link.href}
-                  className="block font-mono text-sm text-text-muted hover:text-blue-accent transition-colors py-1"
+                  className={`block py-1 ${linkClass(link.id)}`}
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
@@ -109,7 +126,7 @@ export default function Navbar() {
               ))
             : HOME_LINKS.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.id}
                   href={`/${link.href}`}
                   className="block font-mono text-sm text-text-muted hover:text-blue-accent transition-colors py-1"
                   onClick={() => setOpen(false)}
