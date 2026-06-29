@@ -8,7 +8,7 @@ const PROJECTS = [
     name: 'GraduationP',
     description:
       'Uzaktan sağlık izleme sistemi. Hastalar vital değerlerini (nabız, tansiyon, oksijen) gerçek zamanlı takip edebilir; doktorlar atanan hastalara erişip uyarıları yönetebilir.',
-    tags: ['React 18', 'TypeScript', 'FastAPI', 'SQLAlchemy', 'Tailwind CSS', 'Chart.js', 'JWT'],
+    tags: ['React 18', 'TypeScript', 'SQLAlchemy', 'Tailwind CSS', 'Chart.js', 'JWT'],
     github: 'https://github.com/KurtEmir/GraduationP',
     demo: null,
     featured: true,

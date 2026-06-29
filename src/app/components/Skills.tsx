@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 const SKILL_GROUPS = [
   {
     category: 'Backend',
-    skills: ['C#', '.NET Core', 'ASP.NET', 'Web API', 'Entity Framework', 'FastAPI'],
+    skills: ['C#', '.NET Core', 'ASP.NET', 'Web API', 'Entity Framework'],
   },
   {
     category: 'Frontend',
@@ -13,11 +13,11 @@ const SKILL_GROUPS = [
   },
   {
     category: 'Veritabanı',
-    skills: ['SQL Server', 'MySQL', 'SQLite', 'SQL Query Optimizasyonu'],
+    skills: ['SQL Server', 'MySQL', 'SQLite', 'PostgreSQL' ,'SQL Query Optimizasyonu'],
   },
   {
     category: 'Araçlar & Platformlar',
-    skills: ['Docker', 'Git', 'GitHub', 'IIS', 'Vercel', 'JWT', 'OpenTelemetry'],
+    skills: ['Docker', 'Git', 'GitHub', 'IIS', 'Vercel', 'JWT', 'Postman', 'n8n', 'OpenTelemetry', 'Supabase'],
   },
   {
     category: 'Diğer',

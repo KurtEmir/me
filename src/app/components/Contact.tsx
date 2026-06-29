@@ -93,8 +93,9 @@ export default function Contact() {
             </p>
           </div>
           <a
-            href="/EmirKurtCV.pdf"
-            download
+            href="https://drive.google.com/uc?export=download&id=1__V9IZB-mxwQcmAF0_kQRx8eTDpMsn2Y"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 bg-blue-accent hover:bg-blue-hover text-white font-mono text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-blue-accent/20"
           >
             <ExternalLink size={14} />

@@ -38,3 +38,6 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 
+# CV (hosted on Google Drive)
+/public/*.pdf
+

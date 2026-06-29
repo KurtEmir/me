@@ -1,6 +1,6 @@
 # Kişisel Bilgiler
 - Emir Kurt
-- Merhabalar. Uzun süredir web alanında yazılım geliştiriyorum. Özellikle .NET Core ve C# ile back-end geliştirme konusunda, tecrübe ve altyapıya sahibim. Aynı zamanda veritabanı yönetimi, SQL optimizasyonları ve API geliştirme üzerine çalışmalarım oldu. Front-end tarafında da ihtiyaç oldukça çalışmalar yaptım ve kullanıcı deneyimini önemseyen yapılar oluşturmaya özen gösterdim.
+- Merhabalar. 2 yılı aşkın bir süredir web alanında yazılım geliştiriyorum. Özellikle .NET ve ReactJS ile kodlama konusunda tecrübe ve altyapıya sahibim. Aynı zamanda veritabanı yönetimi, SQL operasyonları, API geliştirme ve entegrasyonu üzerine çalışmalarım oldu. Front-end tarafında da ihtiyaç oldukça çalışmalar yaptım ve kullanıcı deneyimini önemseyen yapılar oluşturmaya özen gösterdim.
 - Lokasyon (İstanbul, Türkiye)
 - emirkurt_2001@outlook.com
 - https://github.com/KurtEmir
@@ -10,10 +10,10 @@
 # Deneyim (Her iş için)
 TeacherX - Full Stack Software Developer
 Mayıs 2024 - Devam Ediyor
-Eğitim kurumlarının kullanımına yönelik yönetim panelleri (admin panels) ve kullanıcı dostu arayüzleri
+Eğitim kurumlarının kullanımına yönelik yönetim panelleri ve kullanıcı dostu arayüzleri
 geliştirdim.
 SQL View'ları ve karmaşık sorgular ile veritabanı operasyonlarının yürütülmesi.
-TeacherX ve CertifiX projelerinde ASP.NET Core teknolojisi kullanarak Full-Stack Yazılım Geliştirici
+TeacherX, CertifiX, StudentX ve ETZ projelerinde .NET ve ReactJS kullanarak Full-Stack Yazılım Geliştirici
 olarak görev aldım.
 geliştirilmesi
 Kurumsal üyelerin, verilere göre dinamik olarak şekillenen raporları indirebilmesini sağlayan sistemlerin

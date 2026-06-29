@@ -82,19 +82,20 @@ export default function Hero() {
 
         {/* Bio */}
         <p className="text-text-muted text-base sm:text-lg leading-relaxed max-w-xl mb-10">
-          Uzun süredir web alanında yazılım geliştiriyorum. Özellikle{' '}
-          <span className="text-blue-accent font-medium">.NET Core</span> ve{' '}
-          <span className="text-blue-accent font-medium">C#</span> ile back-end geliştirme
-          konusunda tecrübe ve altyapıya sahibim. Veritabanı yönetimi, SQL optimizasyonları ve
-          API geliştirme üzerine çalışmalarım oldu. Front-end tarafında da kullanıcı deneyimini
-          önemseyen yapılar oluşturmaya özen gösterdim.
+          Merhabalar. 2 yılı aşkın bir süredir web alanında yazılım geliştiriyorum. Özellikle{' '}
+          <span className="text-blue-accent font-medium">.NET</span> ve{' '}
+          <span className="text-blue-accent font-medium">ReactJS</span> ile kodlama konusunda
+          tecrübe ve altyapıya sahibim. Aynı zamanda veritabanı yönetimi, SQL operasyonları, API
+          geliştirme ve entegrasyonu üzerine çalışmalarım oldu. Front-end tarafında da kullanıcı
+          deneyimini önemseyen yapılar oluşturmaya özen gösterdim.
         </p>
 
         {/* CTA buttons */}
         <div className="flex flex-wrap gap-4 mb-12">
           <a
-            href="/EmirKurtCV.pdf"
-            download
+            href="https://drive.google.com/uc?export=download&id=1__V9IZB-mxwQcmAF0_kQRx8eTDpMsn2Y"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-blue-accent hover:bg-blue-hover text-white font-mono text-sm font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-blue-accent/20"
           >
             <FileDown size={16} />

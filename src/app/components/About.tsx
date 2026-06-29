@@ -38,15 +38,15 @@ export default function About() {
         {/* Bio */}
         <div className="space-y-4">
           <p className="text-text-muted leading-relaxed text-[15px]">
-            Uzun süredir web alanında yazılım geliştiriyorum. Özellikle{' '}
-            <span className="text-blue-accent font-medium">.NET Core</span> ve{' '}
-            <span className="text-blue-accent font-medium">C#</span> ile back-end geliştirme
-            konusunda tecrübe ve altyapıya sahibim.
+            Merhabalar. 2 yılı aşkın bir süredir web alanında yazılım geliştiriyorum. Özellikle{' '}
+            <span className="text-blue-accent font-medium">.NET</span> ve{' '}
+            <span className="text-blue-accent font-medium">ReactJS</span> ile kodlama konusunda
+            tecrübe ve altyapıya sahibim.
           </p>
           <p className="text-text-muted leading-relaxed text-[15px]">
-            Veritabanı yönetimi, SQL optimizasyonları ve API geliştirme üzerine çalışmalarım
-            oldu. Front-end tarafında da ihtiyaç oldukça çalışmalar yaptım ve kullanıcı
-            deneyimini önemseyen yapılar oluşturmaya özen gösterdim.
+            Aynı zamanda veritabanı yönetimi, SQL operasyonları, API geliştirme ve entegrasyonu
+            üzerine çalışmalarım oldu. Front-end tarafında da ihtiyaç oldukça çalışmalar yaptım
+            ve kullanıcı deneyimini önemseyen yapılar oluşturmaya özen gösterdim.
           </p>
 
           {/* Contact info */}
@@ -124,8 +124,8 @@ export default function About() {
                 <p className="text-text-primary font-medium text-sm">
                   İstanbul Aydın Üniversitesi
                 </p>
-                <p className="text-text-muted text-sm">Bilgisayar Mühendisliği</p>
-                <p className="font-mono text-xs text-blue-accent mt-1">2021 – 2025</p>
+                <p className="text-text-muted text-sm">Bilgisayar Mühendisliği - İngilizce</p>
+                <p className="font-mono text-xs text-blue-accent mt-1">2020 – 2025</p>
               </div>
             </div>
           </div>

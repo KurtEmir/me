@@ -92,8 +92,9 @@ export default function Navbar() {
           </Link>
 
           <a
-            href="/EmirKurtCV.pdf"
-            download
+            href="https://drive.google.com/uc?export=download&id=1__V9IZB-mxwQcmAF0_kQRx8eTDpMsn2Y"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-mono text-sm px-4 py-1.5 border border-blue-accent text-blue-accent hover:bg-blue-accent hover:text-white rounded-lg transition-all"
           >
             CV
@@ -144,8 +145,9 @@ export default function Navbar() {
             Blog
           </Link>
           <a
-            href="/EmirKurtCV.pdf"
-            download
+            href="https://drive.google.com/uc?export=download&id=1__V9IZB-mxwQcmAF0_kQRx8eTDpMsn2Y"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block font-mono text-sm text-blue-accent py-1"
             onClick={() => setOpen(false)}
           >
