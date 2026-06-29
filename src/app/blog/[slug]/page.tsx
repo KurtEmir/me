@@ -2,12 +2,13 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react'
 import { marked } from 'marked'
-import { getPostBySlug, getAllSlugs, POSTS } from '../../data/posts'
+import { getPostBySlug, getAllSlugs, getRelatedPosts } from '@/lib/posts'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }))
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 function formatDate(dateStr: string) {
@@ -25,15 +26,12 @@ const CATEGORY_COLORS: Record<string, string> = {
   Veritabanı: 'bg-[#2a1f0a] text-[#fcd34d] border-[#92400e]',
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug)
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug)
   if (!post) notFound()
 
   const htmlContent = marked(post.content) as string
-
-  const related = POSTS.filter(
-    (p) => p.slug !== post.slug && p.tags.some((t) => post.tags.includes(t))
-  ).slice(0, 2)
+  const related = await getRelatedPosts(post.slug, post.tags)
 
   return (
     <>
@@ -64,7 +62,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </span>
             <span className="flex items-center gap-1.5 text-xs text-text-muted font-mono">
               <Clock size={12} />
-              {post.readTime} dk okuma
+              {post.read_time} dk okuma
             </span>
           </div>
 
@@ -120,7 +118,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                         {r.title}
                       </h3>
                       <p className="font-mono text-xs text-text-muted mt-2 flex items-center gap-1">
-                        <Clock size={11} /> {r.readTime} dk
+                        <Clock size={11} /> {r.read_time} dk
                       </p>
                     </div>
                   </Link>

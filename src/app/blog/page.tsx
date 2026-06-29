@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, Clock, Tag } from 'lucide-react'
-import { POSTS } from '../data/posts'
+import { getAllPosts } from '@/lib/posts'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -19,10 +19,11 @@ function formatDate(dateStr: string) {
   })
 }
 
-export default function BlogPage() {
-  const sorted = [...POSTS].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  )
+export const dynamic = 'force-dynamic'
+
+export default async function BlogPage() {
+  const posts = await getAllPosts()
+  const [featured, ...rest] = posts
 
   return (
     <>
@@ -37,13 +38,13 @@ export default function BlogPage() {
           <p className="text-text-muted text-base max-w-xl">
             Yazılım geliştirme, mimari kararlar ve günlük mühendislik notları.
             Toplam{' '}
-            <span className="text-blue-accent font-semibold">{POSTS.length}</span> yazı.
+            <span className="text-blue-accent font-semibold">{posts.length}</span> yazı.
           </p>
         </div>
 
         {/* Featured post */}
-        {sorted[0] && (
-          <Link href={`/blog/${sorted[0].slug}`} className="block mb-10">
+        {featured && (
+          <Link href={`/blog/${featured.slug}`} className="block mb-10">
             <article className="bg-bg-card border border-blue-subtle rounded-xl p-7 hover:border-blue-accent transition-all duration-300 hover:shadow-lg hover:shadow-blue-accent/10 group">
               <div className="flex items-center gap-3 mb-4">
                 <span className="font-mono text-[11px] px-2.5 py-1 rounded-full bg-blue-accent/20 text-blue-accent border border-blue-accent/40">
@@ -51,24 +52,24 @@ export default function BlogPage() {
                 </span>
                 <span
                   className={`font-mono text-[11px] px-2.5 py-1 rounded-full border ${
-                    CATEGORY_COLORS[sorted[0].category] ?? CATEGORY_COLORS.Backend
+                    CATEGORY_COLORS[featured.category] ?? CATEGORY_COLORS.Backend
                   }`}
                 >
-                  {sorted[0].category}
+                  {featured.category}
                 </span>
               </div>
               <h2 className="font-mono text-xl sm:text-2xl font-bold text-text-primary mb-3 group-hover:text-blue-accent transition-colors">
-                {sorted[0].title}
+                {featured.title}
               </h2>
               <p className="text-text-muted text-sm leading-relaxed mb-5">
-                {sorted[0].excerpt}
+                {featured.excerpt}
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 text-xs text-text-muted font-mono">
-                  <span>{formatDate(sorted[0].date)}</span>
+                  <span>{formatDate(featured.date)}</span>
                   <span className="flex items-center gap-1">
                     <Clock size={12} />
-                    {sorted[0].readTime} dk okuma
+                    {featured.read_time} dk okuma
                   </span>
                 </div>
                 <span className="flex items-center gap-1 text-blue-accent text-sm font-mono group-hover:gap-2 transition-all">
@@ -81,10 +82,9 @@ export default function BlogPage() {
 
         {/* All posts grid */}
         <div className="grid sm:grid-cols-2 gap-5">
-          {sorted.slice(1).map((post) => (
+          {rest.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
               <article className="h-full bg-bg-card border border-border-DEFAULT rounded-xl p-6 hover:border-blue-accent transition-all duration-300 hover:shadow-lg hover:shadow-blue-accent/10 group flex flex-col">
-                {/* Category + read time */}
                 <div className="flex items-center gap-2 mb-3">
                   <span
                     className={`font-mono text-[11px] px-2.5 py-1 rounded-full border ${
@@ -95,7 +95,7 @@ export default function BlogPage() {
                   </span>
                   <span className="flex items-center gap-1 text-[11px] text-text-muted font-mono">
                     <Clock size={11} />
-                    {post.readTime} dk
+                    {post.read_time} dk
                   </span>
                 </div>
 
@@ -126,7 +126,7 @@ export default function BlogPage() {
             <Tag size={13} /> Konular
           </p>
           <div className="flex flex-wrap gap-2">
-            {Array.from(new Set(POSTS.flatMap((p) => p.tags))).map((tag) => (
+            {Array.from(new Set(posts.flatMap((p) => p.tags))).map((tag) => (
               <span
                 key={tag}
                 className="font-mono text-xs px-3 py-1.5 rounded-lg bg-blue-muted text-text-blue border border-blue-subtle hover:border-blue-accent hover:text-text-primary transition-colors cursor-default"

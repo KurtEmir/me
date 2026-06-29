@@ -5,13 +5,22 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const PROJECTS = [
   {
-    name: 'GraduationP',
+    name: 'GraduationProject',
     description:
-      'Uzaktan sağlık izleme sistemi. Hastalar vital değerlerini (nabız, tansiyon, oksijen) gerçek zamanlı takip edebilir; doktorlar atanan hastalara erişip uyarıları yönetebilir.',
-    tags: ['React 18', 'TypeScript', 'SQLAlchemy', 'Tailwind CSS', 'Chart.js', 'JWT'],
-    github: 'https://github.com/KurtEmir/GraduationP',
+      'Full-stack uzaktan sağlık izleme sistemi. Hastalar nabız, tansiyon ve oksijen değerlerini gerçek zamanlı takip edebilir; doktorlar atanan hastalara erişip otomatik sağlık uyarılarını yönetebilir.',
+    tags: ['TypeScript', 'React', 'Python', 'Tailwind CSS', 'JWT'],
+    github: 'https://github.com/KurtEmir/Graduation',
     demo: null,
     featured: true,
+  },
+  {
+    name: 'BasicStockManagement',
+    description:
+      'C# ile geliştirilmiş temel stok yönetim uygulaması. Ürün ekleme, güncelleme ve stok takibi işlemlerini kapsayan CRUD tabanlı bir yönetim sistemi.',
+    tags: ['C#', '.NET', 'CRUD'],
+    github: 'https://github.com/KurtEmir/BasicStockManagement',
+    demo: null,
+    featured: false,
   },
   {
     name: 'MenuPortalApi',
@@ -23,38 +32,29 @@ const PROJECTS = [
     featured: false,
   },
   {
-    name: 'Flip-Learn',
-    description:
-      'Türkçe–İngilizce kelime öğrenme mobil uygulaması. DeepL Translate API entegrasyonlu dijital flashcard sistemi ile ücretsiz dil eğitimi sunar.',
-    tags: ['React Native', 'JavaScript', 'Expo', 'DeepL API'],
-    github: 'https://github.com/KurtEmir/Flip-Learn_Project',
-    demo: null,
-    featured: false,
-  },
-  {
-    name: 'StudentX',
-    description:
-      'Öğrenci bilgi yönetim portali. C# .NET Core API backend ve web tabanlı frontend içerir. Veritabanı diyagramı ile modellenmiş yapısal mimarisi vardır.',
-    tags: ['C#', '.NET', 'HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/KurtEmir/StudentX',
-    demo: null,
-    featured: false,
-  },
-  {
-    name: 'worldcup',
-    description:
-      'Dünya Kupası temalı React web uygulaması. TypeScript ve Vite ile geliştirilmiş, Vercel üzerinde canlıya alınmış modern bir SPA.',
-    tags: ['React', 'TypeScript', 'Vite', 'CSS'],
-    github: 'https://github.com/KurtEmir/worldcup',
-    demo: 'https://worldcup-ochre-nine.vercel.app',
-    featured: false,
-  },
-  {
     name: 'NetflixBackendDemo',
     description:
       'Netflix benzeri içerik akış platformunun backend demo uygulaması. C# ASP.NET Core ile geliştirilmiş REST API mimarisi.',
     tags: ['C#', 'ASP.NET Core', 'REST API'],
     github: 'https://github.com/KurtEmir/NetflixBackendDemo',
+    demo: null,
+    featured: false,
+  },
+  {
+    name: 'QRCodeGenerator',
+    description:
+      'Python ile geliştirilmiş QR kod üreteci. Metin veya URL girişinden anında QR kod oluşturur ve görüntü olarak kaydeder.',
+    tags: ['Python'],
+    github: 'https://github.com/KurtEmir/QRCodeGenerator',
+    demo: null,
+    featured: false,
+  },
+  {
+    name: 'DrawingGameWithPythonTurtle',
+    description:
+      'Python Turtle kütüphanesi ile geliştirilmiş çizim oyunu. Klavye kontrolüyle ekrana şekil çizmeye dayalı eğlenceli ve interaktif bir uygulama.',
+    tags: ['Python', 'Turtle'],
+    github: 'https://github.com/KurtEmir/DrawingGameWithPythonTurtle',
     demo: null,
     featured: false,
   },

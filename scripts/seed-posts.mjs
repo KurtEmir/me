@@ -1,0 +1,252 @@
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+)
+
+const posts = [
+  {
+    slug: 'aspnet-core-clean-architecture',
+    title: 'ASP.NET Core ile Clean Architecture Uygulaması',
+    excerpt:
+      'Kurumsal .NET projelerinde Clean Architecture prensiplerini nasıl uygulayabileceğinizi, katmanlar arası bağımlılıkları nasıl yöneteceğinizi ve SOLID prensiplerine nasıl uyabileceğinizi ele alıyorum.',
+    date: '2026-06-10',
+    read_time: 8,
+    category: 'Backend',
+    tags: ['ASP.NET Core', 'C#', 'Clean Architecture', 'SOLID'],
+    content: `## Giriş
+
+Clean Architecture, Robert C. Martin tarafından ortaya konan ve bağımlılıkların içe doğru aktığı katmanlı bir yazılım mimarisidir. Kurumsal projelerde bu yaklaşımı benimsemek, uzun vadede test edilebilir, bakımı kolay ve genişletilebilir sistemler ortaya çıkarır.
+
+## Katman Yapısı
+
+Clean Architecture dört temel katmandan oluşur: **Domain**, **Application**, **Infrastructure** ve **Presentation**. Her katman yalnızca iç katmanlara bağımlı olabilir; dış katmanlar iç katmanlara bağımlıdır, tersi asla.
+
+### Domain Katmanı
+
+Domain katmanı, iş kurallarını ve entity'leri barındırır. Herhangi bir framework veya kütüphane bağımlılığı içermez. Entity'lerde private setter kullanarak nesnenin tutarsız duruma geçmesini önleriz. Domain nesneleri yalnızca factory metodlar veya constructor üzerinden oluşturulur. Bu yaklaşım **Invariant** (değişmez kural) korumasını garantiler.
+
+### Application Katmanı
+
+Bu katman use case'leri tanımlar. **CQRS** pattern ile Command ve Query'leri ayırmak okunabilirliği artırır. MediatR kütüphanesi bu ayrımı zarif biçimde yönetir. Her iş senaryosu tek bir sorumluluk altında toplanır.
+
+### Infrastructure Katmanı
+
+Veritabanı, harici servis entegrasyonları ve e-posta gönderimleri gibi teknik detaylar burada yaşar. Entity Framework Core DbContext burada tanımlanır. Repository pattern ile domain, infrastructure bağımlılığından korunur.
+
+### Presentation Katmanı
+
+ASP.NET Core Controller veya Minimal API katmanı burada yer alır. Yalnızca HTTP isteği/yanıtı işler; iş mantığına dokunmaz. Request DTO'ları MediatR üzerinden Application'a iletilir.
+
+## Bağımlılık Enjeksiyonu
+
+Her katmanın kendi DependencyInjection uzantı metodu olması, kayıt yönetimini kolaylaştırır. Program.cs dosyası yalnızca AddDomain, AddApplication, AddInfrastructure ve AddPresentation metodlarını zincir halinde çağırır.
+
+## Sonuç
+
+Clean Architecture başlangıçta fazla soyut görünebilir; ancak proje büyüdükçe yatırımın karşılığını almanız kaçınılmaz olur. Katmanları net tutun, bağımlılıkları tek yönlü akıtta kalmasına dikkat edin ve iş kurallarını her zaman Domain katmanında koruyun.`,
+  },
+  {
+    slug: 'entity-framework-core-performans-ipuclari',
+    title: 'Entity Framework Core Performans İpuçları',
+    excerpt:
+      'EF Core kullanırken sık yapılan performans hatalarını ve bunlardan kaçınma yollarını inceliyorum. N+1 sorunu, AsNoTracking, compiled query ve indeks stratejilerini örneklerle açıklıyorum.',
+    date: '2026-05-22',
+    read_time: 6,
+    category: 'Backend',
+    tags: ['Entity Framework', 'C#', 'SQL', 'Performans'],
+    content: `## Entity Framework Core ile Performans
+
+Entity Framework Core, geliştirici üretkenliğini büyük ölçüde artırır; ancak yanlış kullanım ciddi performans sorunlarına yol açabilir.
+
+## N+1 Sorunu
+
+En yaygın hatalardan biri **N+1 sorunudur**. Bir koleksiyon sorguladıktan sonra her eleman için ayrı sorgu tetiklenir. Bu pattern özellikle büyük tablolarda yüzlerce gereksiz SQL sorgusuna yol açar.
+
+**Çözüm:** Include() ile ilişkili entity'leri tek sorguda çekmek. EF Core, bu durumda JOIN kullanarak tüm veriyi tek roundtrip'te alır.
+
+## AsNoTracking Kullanımı
+
+Yalnızca okuma amaçlı sorgularda change tracker'ı devre dışı bırakmak bellek ve CPU kullanımını azaltır. **Kural olarak:** Veri okuyacak, değiştirmeyecekseniz AsNoTracking() ekleyin. Raporlama sorgularında bu genellikle %20-40 performans artışı sağlar.
+
+## Compiled Queries
+
+Aynı sorguyu defalarca çalıştırıyorsanız EF Core'un expression ağacı derleme maliyetini ortadan kaldırmak için **Compiled Query** kullanın. EF.CompileAsyncQuery() ile tanımlanan sorgular ilk çalışmada derlenir, sonrasında doğrudan yürütülür.
+
+## Sayfalama
+
+Büyük tablolarda Skip() ve Take() ile sayfalama zorunludur. Sayfalama olmadan tüm satırlar belleğe yüklenir. Performanslı sayfalama için **Cursor-based pagination** (ID ya da CreatedAt üzerinden) daha ölçeklenebilirdir.
+
+## İndeks Stratejisi
+
+Sık filtrelenen sütun kombinasyonlarına **Composite Index** eklemek sorgu sürelerini dramatik biçimde düşürür. Entity Framework migration üzerinden HasIndex() metoduyla yönetilebilir.
+
+## Sonuç
+
+Performans sorunları genellikle birkaç kötü sorgudan kaynaklanır. SQL Profiler veya EF Core logging ile önce darboğazı tespit edin, sonra optimize edin.`,
+  },
+  {
+    slug: 'react-ile-drag-drop-sistemi',
+    title: 'React ile Sürükle-Bırak (Drag & Drop) Sistemi Geliştirme',
+    excerpt:
+      "Dış kütüphane bağımlılığı olmadan React'te sürükle-bırak sistemi nasıl kurulur? CertifiX projesinde geliştirdiğim sertifika tasarım editörünün arkasındaki mantığı anlatıyorum.",
+    date: '2026-04-15',
+    read_time: 10,
+    category: 'Frontend',
+    tags: ['React', 'TypeScript', 'Drag & Drop', 'Canvas'],
+    content: `## Sürükle-Bırak: Temelden Başlamak
+
+Piyasada react-dnd, dnd-kit gibi mükemmel kütüphaneler var. Ama bazen bir projenin özel ihtiyaçları için sıfırdan bir sürükle-bırak motoru yazmak kaçınılmaz olabiliyor. **CertifiX** projesindeki sertifika tasarım editörü için tam da böyle bir ihtiyaç doğdu.
+
+## Temel Kavramlar
+
+HTML5 Drag and Drop API'si şu olaylarla çalışır:
+
+| Olay | Tetiklendiği An |
+|------|----------------|
+| dragstart | Kullanıcı sürüklemeye başladığında |
+| dragover | Sürüklenen eleman bir hedefin üzerindeyken |
+| drop | Kullanıcı bıraktığında |
+| dragend | Sürükleme sona erdiğinde |
+
+## Bileşen Mimarisi
+
+Her element bir DraggableElement tipine sahiptir: id, type (text / image / shape), x, y, width, height. Canvas bileşeni bu listeyi render eder ve onMouseDown ile sürükleme başlatır.
+
+**Key pattern:** dragOffset ref'i, mouse pozisyonu ile elementin sol-üst köşesi arasındaki farkı tutar. Bu sayede eleman her zaman tıklandığı noktadan tutularak hareket ettirilir, köşeye zıplamaz.
+
+## Grid Snap (Izgara Yapışma)
+
+Elementlerin ızgaraya yapışması kullanıcı deneyimini büyük ölçüde iyileştirir. 8px grid ile çalışmak Material Design prensiplerine de uygundur. Math.round(value / GRID) * GRID formülü yeterlidir.
+
+## History (Geri Al / İleri Al)
+
+Sertifika editörü gibi uygulamalarda **undo/redo** kritiktir. State'i değiştirmek yerine her aksiyonu bir diziye push etmek ve index tutmak basit ama güçlü bir çözümdür.
+
+## Sonuç
+
+Sıfırdan Drag & Drop yazmak zahmetli görünse de projenize tam oturan bir kontrol sağlar. Kütüphane kullanıyorsanız dnd-kit modern React ile en iyi entegrasyona sahiptir.`,
+  },
+  {
+    slug: 'opentelemetry-ile-observability',
+    title: '.NET ile OpenTelemetry: Gözlemlenebilir Sistemler Kurmak',
+    excerpt:
+      "Distributed tracing, metrik toplama ve log korelasyonu. OpenTelemetry'yi ASP.NET Core projesine entegre ederek üretim sistemlerinde sorun tespitini nasıl hızlandırıyorum?",
+    date: '2026-03-08',
+    read_time: 7,
+    category: 'DevOps',
+    tags: ['OpenTelemetry', '.NET', 'Observability', 'Tracing'],
+    content: `## Gözlemlenebilirlik Neden Önemli?
+
+Modern dağıtık sistemlerde bir hata oluştuğunda "nerede ve neden?" sorusuna cevap bulmak ciddi zaman kaybına yol açabilir. **Gözlemlenebilirlik (observability)**, sistemin iç durumunu dışarıdan çıktılar aracılığıyla anlayabilmeyi ifade eder.
+
+Üç temel ayak: **Logs**, **Metrics**, **Traces**.
+
+## OpenTelemetry Nedir?
+
+OpenTelemetry, gözlemlenebilirlik için bağımsız bir açık standart ve SDK ailesidir. Vendor lock-in olmadan Jaeger, Grafana Tempo, Datadog gibi farklı backend'lere veri gönderebilirsiniz.
+
+## Kurulum
+
+OpenTelemetry.Extensions.Hosting, OpenTelemetry.Instrumentation.AspNetCore ve OpenTelemetry.Instrumentation.Http paketleri temel kurulum için yeterlidir.
+
+## Custom Span Oluşturma
+
+ActivitySource ile kendi iş akışlarınız için özel span'lar açabilirsiniz. Her rapor oluşturma işlemini bir span ile sarmaladık; bu sayede raporun ne kadar sürdüğünü, kaç kayıt işlediğini ve hata durumlarını Grafana'da görebildik.
+
+## Metrik Toplama
+
+AddRuntimeInstrumentation() ile .NET runtime metrikleri (GC, thread pool, bellek) otomatik toplanır. AddAspNetCoreInstrumentation() ile HTTP request süresi, durum kodu dağılımı gibi metrikler hazır gelir.
+
+## Sonuç
+
+OpenTelemetry'yi projeye entegre etmek bir kez yapılır, faydası sürekli artar. Üretim sorunlarını log aramak yerine trace görüntüleyerek çözmek çok daha hızlıdır.`,
+  },
+  {
+    slug: 'sql-server-view-ve-index-optimizasyonu',
+    title: 'SQL Server: View ve Index ile Sorgu Optimizasyonu',
+    excerpt:
+      "Karmaşık raporlama sorgularını View'lar ile yönetilebilir hale getirmek ve doğru index stratejisiyle sorgu sürelerini dramatik biçimde kısaltmak üzerine pratik deneyimlerim.",
+    date: '2026-02-14',
+    read_time: 5,
+    category: 'Veritabanı',
+    tags: ['SQL Server', 'SQL', 'Performans', 'Index'],
+    content: `## View Kullanımının Avantajları
+
+SQL View'ları, karmaşık JOIN sorgularını tek bir isimle sarmalayarak kod tekrarını azaltır ve iş mantığını veritabanı seviyesinde merkezileştirir.
+
+## Indexed View
+
+Karmaşık bir View'ı sık sorguluyorsanız **Indexed View** (Materialized View) kullanmak sorgu süresini dramatik düşürebilir. SQL Server, indexed view'ı fiziksel olarak saklar ve DML operasyonlarında otomatik günceller.
+
+## Index Stratejisi
+
+### Composite Index
+
+Birden fazla sütuna göre sıklıkla filtreleme yapıyorsanız composite index tercih edin. Sütun sırası önemlidir: En seçici sütun önce gelmelidir.
+
+### Covering Index
+
+Sorgunun tüm sütunlarını INCLUDE ile kapsayan bir index, table scan'ı tamamen ortadan kaldırır.
+
+### Filtered Index
+
+Sık sorgulanan bir alt küme için filtered index, boyutu küçük tutar ve bakımı ucuzlaşır.
+
+## Execution Plan Okumak
+
+SQL Server Management Studio'da **Include Actual Execution Plan** açın. Key Lookup ve Table Scan operasyonları index eksikliğinin işaretidir.
+
+## Sonuç
+
+Index stratejisi kör ekleme değil, ölçüm odaklı bir süreçtir. Önce yavaş sorguyu tespit edin, sonra doğru index türünü seçin.`,
+  },
+  {
+    slug: 'vimeo-api-entegrasyonu',
+    title: 'Vimeo API ile Canlı Yayın Altyapısı Kurmak',
+    excerpt:
+      "TeacherX platformu için Vimeo API entegrasyonu sırasında karşılaştığım zorluklar, webhook yönetimi ve token güvenliği üzerine edindiğim pratik bilgileri paylaşıyorum.",
+    date: '2026-01-20',
+    read_time: 9,
+    category: 'Backend',
+    tags: ['Vimeo API', 'ASP.NET Core', 'Webhook', 'Streaming'],
+    content: `## Vimeo API ile Çalışmak
+
+Eğitim platformlarında video içerik yönetimi kritik bir bileşendir. **TeacherX** projesinde Vimeo API'sini entegre ederken karşılaştığım deneyimleri bu yazıda aktarıyorum.
+
+## Temel Kurulum
+
+Vimeo API, Bearer token tabanlı OAuth 2.0 kullanır. HttpClient üzerinde Authorization: Bearer header'ı ve Vimeo'nun versiyonlanmış Accept header'ı zorunludur.
+
+Token güvenliği için **asla** source code'a gömmek yerine dotnet user-secrets (development) ve environment variable veya Azure Key Vault (production) kullanın.
+
+## Resümable Upload
+
+Vimeo, büyük video dosyaları için **tus protokolünü** destekler. Bu protokol ağ kesilmelerine karşı dayanıklıdır; upload kaldığı yerden devam eder.
+
+## Webhook ile Transcode Bildirimi
+
+Büyük videolar için upload sonrası Vimeo, encode işlemi tamamlanana kadar video oynatılamaz. Polling yerine **webhook** kullanmak çok daha verimlidir.
+
+Webhook doğrulaması kritiktir: Vimeo, isteği X-Vimeo-Signature header'ı ile imzalar. Bu imzayı doğrulamadan işlem yapmak güvenlik açığı oluşturur.
+
+## Rate Limiting
+
+Vimeo API saatte 1000 istek sınırı koyuyor. Aynı video metadata'sını defalarca sorgulamamak için in-memory cache veya Redis kullandık.
+
+## Sonuç
+
+Vimeo API belgeleri kapsamlıdır ancak bazı edge case'ler — özellikle büyük dosya upload'ları ve webhook doğrulaması — deneme yanılmayla öğrenildi.`,
+  },
+]
+
+const { data, error } = await supabase.from('posts').insert(posts).select()
+
+if (error) {
+  console.error('Hata:', error.message)
+  process.exit(1)
+}
+
+console.log(`✓ ${data.length} post başarıyla eklendi:`)
+data.forEach((p) => console.log(`  - ${p.slug}`))

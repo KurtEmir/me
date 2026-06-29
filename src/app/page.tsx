@@ -7,8 +7,11 @@ import Experience from './components/Experience'
 import BlogPreview from './components/BlogPreview'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { getAllPosts } from '@/lib/posts'
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts()
+
   return (
     <>
       <Navbar />
@@ -25,7 +28,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto border-t border-border-DEFAULT opacity-30" />
         <Experience />
         <div className="max-w-5xl mx-auto border-t border-border-DEFAULT opacity-30" />
-        <BlogPreview />
+        <BlogPreview posts={posts} />
         <div className="max-w-5xl mx-auto border-t border-border-DEFAULT opacity-30" />
         <Contact />
       </main>

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
-import { POSTS } from '../data/posts'
+import type { Post } from '@/lib/posts'
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('tr-TR', {
@@ -20,7 +20,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   Veritabanı: 'text-[#fcd34d] border-[#92400e] bg-[#2a1f0a]',
 }
 
-export default function BlogPreview() {
+export default function BlogPreview({ posts }: { posts: Post[] }) {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -34,9 +34,7 @@ export default function BlogPreview() {
     return () => observer.disconnect()
   }, [])
 
-  const recent = [...POSTS]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3)
+  const recent = posts.slice(0, 3)
 
   return (
     <section id="blog" ref={ref} className="section-enter py-24 px-6 max-w-5xl mx-auto">
@@ -58,7 +56,6 @@ export default function BlogPreview() {
         {recent.map((post, i) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
             <article className="bg-bg-card border border-border-DEFAULT rounded-xl p-5 hover:border-blue-accent transition-all duration-300 hover:shadow-lg hover:shadow-blue-accent/10 group flex items-start gap-5">
-              {/* Number */}
               <span className="font-mono text-2xl font-bold text-border-DEFAULT group-hover:text-blue-accent/30 transition-colors hidden sm:block flex-shrink-0 w-8 text-right">
                 {String(i + 1).padStart(2, '0')}
               </span>
@@ -73,7 +70,7 @@ export default function BlogPreview() {
                     {post.category}
                   </span>
                   <span className="font-mono text-xs text-text-muted flex items-center gap-1">
-                    <Clock size={11} /> {post.readTime} dk
+                    <Clock size={11} /> {post.read_time} dk
                   </span>
                 </div>
                 <h3 className="font-mono text-base font-semibold text-text-primary group-hover:text-blue-accent transition-colors mb-1 truncate">
@@ -96,7 +93,6 @@ export default function BlogPreview() {
         ))}
       </div>
 
-      {/* Mobile "all posts" link */}
       <div className="mt-6 sm:hidden text-center">
         <Link
           href="/blog"
